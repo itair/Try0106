@@ -44,6 +44,8 @@ void main()
   fout.open(filename, ios::out|ios::app);
   if (!fout.is_open()) {
     cout << "File open failed!\n";
+    system("pause");
+    exit(EXIT_FAILURE);
   } else {
     cout << "Enter some charactors end with ctrl+Z:\n";
     while(cin.get(ch1) && ch1 != '$') {
@@ -52,7 +54,39 @@ void main()
   }
   cout << "text saved." << filename << endl;
   fout.close();
+  //蛋疼 文件流命名
 
+  longline(3); //3
+  string file_to_copy;
+  string file_copy_to;
+  char ch2;
+  fstream fio1, fio2;
+
+  cout << "Enter .txt file name you want to copy:";
+  cin >> file_to_copy;
+  file_to_copy += ".txt";
+  fio1.open(file_to_copy);
+  if (!fio1.is_open()) {
+    cout << "Can't open " << file_to_copy << "!\n";
+    system("pause");
+    exit(EXIT_FAILURE);
+  }
+  cout << "Enter .txt file name you will save to: ";
+  cin >> file_copy_to;
+  file_copy_to += ".txt";
+  fio2.open(file_copy_to, ios::out | ios::app);
+  if (!fio2.is_open()) {
+    cout << "Can't open " << file_copy_to << "!\n";
+    system("pause");
+    exit(EXIT_FAILURE);
+  }
+  while ( fio1.get(ch2)) {
+    fio2 << ch2;
+  }
+  fio1.close();
+  fio2.close();
+  cout << "3 Done.\n";
+  //
 
 
   longline();
