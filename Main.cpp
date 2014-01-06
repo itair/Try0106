@@ -9,6 +9,9 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
 
 
 using namespace std;
@@ -164,6 +167,32 @@ void main()
   ShowList (namelist);
   //文件读写与数据结构和容器的组合
 
+  longline(6); //6  pass 经典的Emplyeee 类
+
+  longline(7); //7 
+  string temp;
+  vector<string> vostr;
+
+  cout << "Enter steings( empty line to quit):\n";
+  while (getline(cin, temp) && temp[0] != '\0') 
+    vostr.push_back(temp);
+  cout << "Here is your input \n";
+  for_each(vostr.begin(), vostr.end(), showStr);
+
+  ofstream fout("strings.dat", ios_base:: out | ios_base::binary);
+  for_each(vostr.begin(), vostr.end(), Storn(fout));
+  fout.close();
+  
+  vector<string> vistr;
+  ifstream fin("strings.dat", ios_base::in | ios_base::binary);
+  if (!fin.is_open()) {
+      cerr << "Could not open file for input: \n";
+      exit(EXIT_FAILURE);
+  }
+    GetStrs(fin, vistr);
+    cout << "\nHera are the strings read from the file: \n";
+    for_each(vistr.begin(), vistr.end(), ShowStr);
+  }
 
   longline();
   system("pause");
