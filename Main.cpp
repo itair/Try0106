@@ -8,6 +8,8 @@
 #include "Inline.h"
 #include <iostream>
 #include <string>
+#include <fstream>
+
 
 using namespace std;
 
@@ -17,7 +19,42 @@ void main()
   longline();
 
   longline(1); //1  
-  
+  char ch;
+  string str;
+  int n(0);
+  cout << "Enter some charactors end with $:\n";
+  while(cin>>ch) {
+    n++;
+    str += ch;
+    if (ch == '$') break; 
+  }
+  cin.clear();
+  cin.sync();
+  cout << n <<" letters befor '$' in" << str << endl; 
+  //ÊäÈëÁ÷²âÊÔ
+
+  longline(2);//2
+  string filename;
+  fstream fout;
+  char ch1;
+
+  cout << "Input .txt filename: ";
+  cin >> filename ;
+  filename += ".txt";
+  fout.open(filename, ios::out|ios::app);
+  if (!fout.is_open()) {
+    cout << "File open failed!\n";
+  } else {
+    cout << "Enter some charactors end with ctrl+Z:\n";
+    while(cin.get(ch1) && ch1 != '$') {
+      fout << ch1;
+    }     
+  }
+  cout << "text saved." << filename << endl;
+  fout.close();
+
+
+
   longline();
   system("pause");
 }
