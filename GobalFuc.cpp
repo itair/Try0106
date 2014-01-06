@@ -62,7 +62,7 @@ void InputName(std::list<std::string>& li, const std::string & filename) {
        return;
     ofstream fout(filename);
     if (!fout.is_open())  {
-      cout << "Faile to open " << filename << "! \n";
+      cout << "Fail to open " << filename << "! \n";
       system("pause");
       exit(EXIT_FAILURE);
     } else {
@@ -70,4 +70,12 @@ void InputName(std::list<std::string>& li, const std::string & filename) {
         fout << str << endl;
       }      
     } //else
+ }
+
+ void ShowStr(const std::string & str) {
+   std::cout << str << std::endl;
+ }
+
+ void Store(const std::string & filename){
+   ifstream fin(filename);
  }

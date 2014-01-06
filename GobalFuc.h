@@ -4,6 +4,7 @@
 #define TRY0101_TRY0101_GOBLALFUN_H
 #include <string>
 #include <list>
+#include <fstream>
 
  void showtitle(void);
 
@@ -15,5 +16,9 @@
    const std::list<std::string>&) ;
  
  void SaveList(std::list<std::string>& ,const std::string &);
+
+ void ShowStr(const std::string&);
+
+ void Store(const std::ifstream & fin);
 
 #endif //TRY0101_TRY0101_GOBLALFUN_H
