@@ -177,10 +177,10 @@ void main()
   while (getline(cin, temp) && temp[0] != '\0') 
     vostr.push_back(temp);
   cout << "Here is your input \n";
-  for_each(vostr.begin(), vostr.end(), showStr);
+  for_each(vostr.begin(), vostr.end(), ShowStr);
 
   ofstream fout("strings.dat", ios_base:: out | ios_base::binary);
-  for_each(vostr.begin(), vostr.end(), Storn(fout));
+  for_each(vostr.begin(), vostr.end(), Store(fout));
   fout.close();
   
   vector<string> vistr;
@@ -192,7 +192,7 @@ void main()
     GetStrs(fin, vistr);
     cout << "\nHera are the strings read from the file: \n";
     for_each(vistr.begin(), vistr.end(), ShowStr);
-  }
+  
 
   longline();
   system("pause");

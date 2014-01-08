@@ -71,3 +71,32 @@ void InputName(std::list<std::string>& li, const std::string & filename) {
       }      
     } //else
  }
+
+ void ShowStr(const std::string  & str) {
+   std::cout << str << std::endl;
+ }
+
+ void GetStrs(std::ifstream & is, std::vector<std::string> & vs) {
+   std::string temp;
+   size_t len;
+
+   while (is.read((char *) &len, sizeof(size_t)) && len > 0)
+   {
+     char ch;
+     temp = "";
+     for (int j = 0; j < (int)len; j++)
+     {
+       if (is.read(&ch, 1))
+       {
+         temp += ch;
+       }
+       else
+         break;
+     }
+     if (is)
+       vs.push_back(temp);
+   }
+
+ }
+
+
