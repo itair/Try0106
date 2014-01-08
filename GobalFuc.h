@@ -4,10 +4,8 @@
 #define TRY0101_TRY0101_GOBLALFUN_H
 #include <string>
 #include <list>
-<<<<<<< HEAD
 #include <vector>
-=======
->>>>>>> c2f5e03c9ee7974f6a26f8c5b90cda75b0115eb7
+
 #include <fstream>
 
  void showtitle(void);
@@ -21,14 +19,12 @@
  
  void SaveList(std::list<std::string>& ,const std::string &);
 
-<<<<<<< HEAD
+
  void ShowStr(const std::string &);
 
  void GetStrs(std::ifstream &, std::vector<std::string> &);
-=======
- void ShowStr(const std::string&);
 
- void Store(const std::ifstream & fin);
->>>>>>> c2f5e03c9ee7974f6a26f8c5b90cda75b0115eb7
+
+
 
 #endif //TRY0101_TRY0101_GOBLALFUN_H
