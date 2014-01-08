@@ -1,5 +1,5 @@
 /*-----------------------------------------
-//   C++ Primer Plus 课后习题 p298 8.8
+//   C++ Primer Plus 课后习题 p794 17.10
 //   by itAir
 //   Try to use Google C++ programing style   
 ----------------------------------------- */    
@@ -173,7 +173,7 @@ void main()
   string temp;
   vector<string> vostr;
 
-  cout << "Enter steings( empty line to quit):\n";
+  cout << "Enter strings (empty line to quit):\n";
   while (getline(cin, temp) && temp[0] != '\0') 
     vostr.push_back(temp);
   cout << "Here is your input \n";
@@ -189,11 +189,19 @@ void main()
       cerr << "Could not open file for input: \n";
       exit(EXIT_FAILURE);
   }
+<<<<<<< HEAD
     GetStrs(fin, vistr);
     cout << "\nHera are the strings read from the file: \n";
     for_each(vistr.begin(), vistr.end(), ShowStr);
   
 
+=======
+  GetStrs(fin, vistr);
+  cout << "\nHera are the strings read from the file: \n";
+  for_each(vistr.begin(), vistr.end(), ShowStr);
+  
+    
+>>>>>>> c2f5e03c9ee7974f6a26f8c5b90cda75b0115eb7
   longline();
   system("pause");
 }
